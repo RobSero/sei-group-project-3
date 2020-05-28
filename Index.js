@@ -8,6 +8,7 @@ const dbURI = 'mongodb://localhost/spotme-db'
 const errorHandler = require('./lib/errorHandler')
 
 
+
 mongoose.connect(
   dbURI,
   { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true  },

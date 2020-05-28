@@ -118,10 +118,10 @@ async function removeComment(req,res,next){
     const owner = await User.findById(req.params.ownerId)
     const post = owner.posts.id(req.params.postId)
     const commentToDelete = post.comments.id(req.params.commentId)
-    if (!owner || !post || !commentToDelete) {
-      throw new Error('Not Found')
+  
+    if (!commentToDelete.owner.equals(req.currentUser._id)){
+      throw new Error('Not authorized to do this')
     }
-    
     post.comments.pull(commentToDelete)
     await owner.save()
     res.status(201).json('comment removed successfully')

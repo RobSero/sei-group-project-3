@@ -24,17 +24,23 @@ class Home extends React.Component {
 
     getData = async () => {
       let postsArray = []
-      const postRes = await axios.get('/api/news', withHeaders())
-      const getPostsArray = postRes.data.slice(0).reverse()
-        getPostsArray.map(user => {
-        user.map(post => {
-          postsArray.push(post)
+      try {
+        const postRes = await axios.get('/api/news', withHeaders())
+        const getPostsArray = postRes.data.slice(0).reverse()
+          getPostsArray.map(user => {
+          user.map(post => {
+            postsArray.push(post)
+          })
         })
-      })
-      const getCurrentId = await getUserId()
-      const getCurrentProfile = await getProfile(getCurrentId)
-      const currentUser = getCurrentProfile.data
-      this.setState({ postsArray, currentUser})
+        const getCurrentId = await getUserId()
+        const getCurrentProfile = await getProfile(getCurrentId)
+        const currentUser = getCurrentProfile.data
+        this.setState({ postsArray, currentUser})
+      } catch (err) {
+        console.log(err);
+        
+      }
+    
     }
 
     commentDelete = async (postId, postOwnerId, commentId) => {
@@ -102,7 +108,7 @@ class Home extends React.Component {
                 refresh={this.getData}
                 currentUser={this.state.currentUser}
               />
-
+          {posts.length === 0 ? <h1>No posts have been made....Yet</h1> : ''}
               {posts.slice(0).reverse().map((post, i) => {
                 return <NewsFeedsCard
                 key={`profile${post._id}`}

@@ -28,7 +28,6 @@ export const postContent = async (content, userId) => {
   return await axios.post(`${baseUrl}/profile/${userId}/post`, content, withHeaders())
 }
 
-
 export const getLike = async (userId, postId) => {
   return await axios.put(`/api/profile/${userId}/post/${postId}`,'' , withHeaders() )
 } 
