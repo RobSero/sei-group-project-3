@@ -5,6 +5,7 @@ require('dotenv').config()
 const apiKey = process.env.GOOGLE_API_KEY
 
 
+
 // -----------------------  GET REQUEST FROM FRONT END ('/locations') ------------------------
 // ----------- returns array of locations which have been cleaned up to be saved in state ----
 // REQUIRES A BODY = {
