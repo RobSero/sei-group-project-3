@@ -40,17 +40,7 @@ class Map extends React.Component {
         </Marker>
          
         </MapGl>
-        <div className={`modal ${modalClassName}`}>
-          <div className='gym-modal-info modal-info'>
-            <div className='gym-modal-text'>
-              <div className="close" onClick={this.hideModal}><p>X</p></div>
-              <p>{name}</p>
-              <p>{location}</p>
-              <p>{businessStatus}</p>
-              <Link to={`/locations/${place_id}`} > <p>see more...</p></Link>
-            </div>
-          </div>
-        </div>
+       
       </>
     )
   }
