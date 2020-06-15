@@ -6,28 +6,22 @@ import { Link } from 'react-router-dom'
 
 class Map extends React.Component {
   state = {
-    modal: false,
-    data: []
+    lat: null,
+    lon: null
   }
 
   async handleModal(id) { 
-    this.setState({ modal: true })
     try {
       const response = await axios.post(`/api/locations/${id}`) 
-      this.setState({ data: response.data })
+      this.setState({ lat: response.data.lat, lon: response.data.lon })
     } catch (err) {
       console.log(err)
     }
   }
 
-  hideModal=()=>{
-    this.setState({ modal: false })
-  }
+
 
   render() {
-    const { modal } = this.state
-    const { name , location, businessStatus, place_id } = this.state.data
-    const modalClassName = modal ? 'display-block' : 'display-none'
     return (
       <>
         <MapGl
@@ -36,17 +30,15 @@ class Map extends React.Component {
           {...this.props.viewport}
           onViewportChange={this.props.moveMap}
         >
-          {this.props.data.map((location) => {
-            return <Marker
-              key={location.place_id}
-              latitude={location.lat}
-              longitude={location.lng}>
+         
+         <Marker
+              latitude={this.state.lat}
+              longitude={this.state.lon}>
               <span role="img"
                 aria-label="marker"
-                onClick={() =>this.handleModal(location.place_id)}
-              >🐳</span>
-            </Marker>
-          })}
+              >X</span>
+        </Marker>
+         
         </MapGl>
         <div className={`modal ${modalClassName}`}>
           <div className='gym-modal-info modal-info'>
