@@ -4,6 +4,11 @@ html {
   background-color: #343D42;
 }
 
+.groups-list-wrap::-webkit-scrollbar {
+  display: none;
+}
+
+
 // body.preload *{
 //   animation-duration: 0s !important;
 //   -webkit-animation-duration: 0s !important;

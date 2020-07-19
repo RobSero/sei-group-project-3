@@ -21,7 +21,14 @@ handleChange = event => {
 
 handleSubmit =  async (event) => {
   event.preventDefault()
-  await axios.post(`/api/groups/new`, this.state.group, withHeaders())
+  try {
+    const res = await axios.post(`/api/groups/new`, this.state.group, withHeaders())
+    window.location.reload(true)
+  }
+  catch(err) {
+    console.log(err);
+  }
+  
 }
 
 render(){

@@ -30,7 +30,7 @@ render() {
             <p onClick={this.toggleModal}>+ New Group</p>
           </div>
 
-          <div className="groups-list-wrap" style={{overflow: 'hidden'}}>
+          <div className="groups-list-wrap">
             <div className="groups-list">
               <ProfileGroups 
                 user={this.props.user}
