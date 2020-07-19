@@ -49,7 +49,6 @@ class Navbar extends React.Component{
                 src={this.state.user.image}
                 alt="profile" 
               />{this.state.user.firstName}</Link>}
-              {isAuthenticated() && <Link to="" className="navbar-button"><img src={require('../../assets/cogwheel.png')} alt="settings" /></Link>}
               {isAuthenticated() && <span onClick={this.handleLogout} className="navbar-button"><img src={require('../../assets/signs.png')} alt="logout" /></span>}
             </div>
           </div>

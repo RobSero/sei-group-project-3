@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { getUserId } from '../../lib/auth'
+import {isAuthenticated} from '../../lib/auth'
 import ProfileSidebar from '../common/ProfileSidebar'
 import NewsFeedsCard from './NewsFeedsCard'
 import FriendsSidebar from '../common/FriendsSidebar'
@@ -108,7 +109,7 @@ class Home extends React.Component {
                 refresh={this.getData}
                 currentUser={this.state.currentUser}
               />
-          {posts.length === 0 ? <h1>No posts have been made....Yet</h1> : ''}
+          {posts.length === 0 ? <h1 style={{textAlign: 'center'}}>No posts have been made....Yet</h1> : ''}
               {posts.slice(0).reverse().map((post, i) => {
                 return <NewsFeedsCard
                 key={`profile${post._id}`}

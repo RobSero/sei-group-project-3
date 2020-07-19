@@ -24,13 +24,13 @@ render() {
           </div>
         </div>
 
-        <div className='groups-container'>
+        <div className='groups-container' >
           <div className='sidebar-head'>
             <h1>Groups</h1>
             <p onClick={this.toggleModal}>+ New Group</p>
           </div>
 
-          <div className="groups-list-wrap">
+          <div className="groups-list-wrap" style={{overflow: 'hidden'}}>
             <div className="groups-list">
               <ProfileGroups 
                 user={this.props.user}

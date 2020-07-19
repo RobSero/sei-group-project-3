@@ -35,6 +35,7 @@ async function getLocalFacilityData(req, res, next) {
     if (!response){
       throw new Error('Not Found')
     }
+    console.log(response.data)
     // If Google returns an array of locations:
     const locationData = response.data.results
     const cleanedUpData = locationData.map(location => {
@@ -60,7 +61,6 @@ async function getLocalFacilityData(req, res, next) {
 
 ///---------get the coordinates ( lat and lon ) from the postcode search input ( /locations) -------------
 async function getCoOrdinates(req, res) {
-  console.log('got ya boi')
   const googleGeoURL = 'https://maps.googleapis.com/maps/api/geocode/json?'
   const address = req.body.address
   try {

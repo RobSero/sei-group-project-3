@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
   username: { type: String, required: true, maxlength: 50 },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  image: { type: String },
+  image: { type: String, default: 'https://res.cloudinary.com/dy7eycl8m/image/upload/v1594820547/thing-654750_1280_xwusfb.png' },
   level: { type: String, required: true },
   gyms: [],
   likes: [],

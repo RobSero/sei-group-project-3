@@ -47,7 +47,7 @@ render() {
               <img 
                 className="profile-picture"
                 loading='lazy'
-                src={this.props.currentUser.image} 
+                src={this.props.currentUser.image ? this.props.currentUser.image : 'https://res.cloudinary.com/dy7eycl8m/image/upload/v1591819721/empty-avatar-png-transparent_mighcw.png' } 
                 alt="logo" 
               />
             </figure>
@@ -59,6 +59,7 @@ render() {
                 value={this.state.formData.content}
                 placeholder="Want to post something?"
                 onChange={this.handleChange}
+                style={{overflow: 'hidden'}}
               />
             </div>
           </div>

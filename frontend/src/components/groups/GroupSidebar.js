@@ -12,7 +12,7 @@ function GroupSidebar(props) {
           <div className='sidebar-head'>
             <h1>Members</h1>
           </div>
-          <div className="groups-list-wrap">
+          <div className="groups-list-wrap" style={{overflow: 'hidden'}}>
         <div className="groups-list">
           {members ? members.map(member => {
             return (
