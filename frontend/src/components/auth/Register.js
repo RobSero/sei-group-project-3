@@ -64,7 +64,7 @@ class Register extends React.Component {
           <div className="columns">
             <form onSubmit={ this.handleSubmit } className="column is-half is-offset-one-quarter box">
               <div className="field">
-                <label className="label">First Name</label>
+                <label className="label">Firstcdcdcdc Name</label>
                 <div className="control">
                   <input 
                     className={ `input ${errors.username ? 'is-danger' : '' }` }
