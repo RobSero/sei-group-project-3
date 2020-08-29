@@ -17,12 +17,7 @@ render() {
   return (
     <div className="left-section">
       <div className='profile-sidebar'>
-        <div className='events-container'>
-          <div className='sidebar-head'> 
-            <h1>Events</h1>
-            <p>+ New Event</p>
-          </div>
-        </div>
+     
 
         <div className='groups-container' >
           <div className='sidebar-head'>

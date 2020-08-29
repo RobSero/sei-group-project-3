@@ -21,6 +21,9 @@ handleChange = event => {
 
 handleSubmit =  async (event) => {
   event.preventDefault()
+  if (!this.state.groups.image) {
+    this.state.groups.image = 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/06/09/11/group-photos-need-to-die.jpg?width=990'
+  }
   try {
     const res = await axios.post(`/api/groups/new`, this.state.group, withHeaders())
     window.location.reload(true)

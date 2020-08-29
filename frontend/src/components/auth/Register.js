@@ -64,7 +64,7 @@ class Register extends React.Component {
           <div className="columns">
             <form onSubmit={ this.handleSubmit } className="column is-half is-offset-one-quarter box">
               <div className="field">
-                <label className="label">Firstcdcdcdc Name</label>
+                <label className="label">First Name</label>
                 <div className="control">
                   <input 
                     className={ `input ${errors.username ? 'is-danger' : '' }` }
@@ -180,14 +180,6 @@ class Register extends React.Component {
                     />
                     Advanced
                   </label>
-                </div>
-              </div>
-              {/* //* can't get upload to work */}
-              <div className="field">
-                <div className="control">
-                  <ImageUpload 
-                    name="image"
-                  />
                 </div>
               </div>
               <div className="field">

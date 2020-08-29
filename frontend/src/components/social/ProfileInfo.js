@@ -14,7 +14,8 @@ const defaultImage = 'https://bit.ly/3g47LRX'
 class ProfileInfo extends React.Component {
   state ={
     showFollowers: false,
-    modal: false
+    modal: false,
+    reload: false
   }
 
   toggleModal = () => this.setState({ modal: !this.state.modal })
@@ -24,6 +25,7 @@ class ProfileInfo extends React.Component {
     followUser = async () =>{
       const userId = this.props.user.id
       const message = await followAUser(userId)
+      this.props.reload()
       // notify(message.data)
     // this.setState({ showFollowers: !this.state.showFollowers })
   }

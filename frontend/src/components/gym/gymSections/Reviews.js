@@ -8,11 +8,11 @@ const Reviews = ({reviews,status}) => {
     <div className={`${showSection} review-field`}>
     <h1>Reviews</h1>
     {reviews.length > 0? reviews.map(review => {
-      return <div className='review-field' key={review.author_name}>
+      return <div className='review-field-item' key={review.author_name}>
         <p className="name" >{review.author_name} </p>
-        <p> rating: {review.rating} </p>
-        <p>time: {review.relative_time_description}</p>
-        <p>{review.text}</p>
+        <p className='rating'> Rating: {review.rating} </p>
+        <p className='date'>Date: {review.relative_time_description}</p>
+        <p className='text'>{review.text}</p>
       </div>
     })  : 'No Reviews' } 
   </div>

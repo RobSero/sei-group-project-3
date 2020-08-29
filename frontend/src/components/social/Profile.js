@@ -20,7 +20,8 @@ state = {
   },
   modal: false,
   index: null,
-currentUser : {}
+currentUser : {},
+reload :true
 }
 
 async componentDidMount() {
@@ -52,6 +53,20 @@ componentDidUpdate = async (prevProps) => {
       }
   }
 }
+
+handleFollow = async() => {
+  try {
+    const userId = this.props.match.params.userId
+    const res = await getProfile(userId)
+    const getCurrentId = await getUserId()
+    const currentUser = await getProfile(getCurrentId)
+    this.setState( { user: res.data, currentUser : currentUser.data  }) 
+    this.getData()
+   } catch (err) {
+      console.log(err)
+    }
+  }
+
 
 getData = async () => {
   const userId = this.props.match.params.userId
@@ -132,6 +147,7 @@ render(){
             currentUser={this.state.currentUser}
             refresh={this.getData}
             handleEdit={this.profileEditted}
+            reload = {this.handleFollow}
             />
         </div>
         <div className='profile-post'>

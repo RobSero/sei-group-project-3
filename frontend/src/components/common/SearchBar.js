@@ -52,7 +52,7 @@ render(){
                   className="searchbar-profile-picture"
                   loading='lazy'
                   src={user.image} 
-                  alt="logo" 
+                  alt="" 
                   
                 />
                 <div className="field field-searchbar-item">
@@ -73,7 +73,7 @@ render(){
                   className="searchbar-profile-picture"
                   loading='lazy'
                   src={group.image} 
-                  alt="logo" 
+                  alt="" 
                 />
                 <div className="field field-searchbar-item">
                   <p className="">{group.name}</p>
