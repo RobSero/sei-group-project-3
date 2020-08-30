@@ -23,7 +23,6 @@ const App = () => {
           <Route exact path='/profile/:userId' component={withRouter(Profile) }/>
           <Route path='/home' component={Home}/>
           <Route path='/groups/:groupId' component={GroupShow}/>
-
         </Switch>
       </BrowserRouter>
     </>
