@@ -25,6 +25,8 @@ class Map extends React.Component {
   }
 
   render() {
+    {console.log('token')}
+    {console.log(process.env.REACT_APP_MAPBOX_ACCESS_TOKEN)}
     const { modal } = this.state
     const { name , location, businessStatus, place_id } = this.state.data
     const modalClassName = modal ? 'display-block' : 'display-none'
