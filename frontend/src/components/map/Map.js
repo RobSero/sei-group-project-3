@@ -4,6 +4,8 @@ import axios from 'axios'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { Link } from 'react-router-dom'
 
+const tok = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN
+
 class Map extends React.Component {
   state = {
     modal: false,
@@ -24,16 +26,15 @@ class Map extends React.Component {
     this.setState({ modal: false })
   }
 
+
   render() {
-    {console.log('token')}
-    {console.log(process.env.REACT_APP_MAPBOX_ACCESS_TOKEN)}
     const { modal } = this.state
     const { name , location, businessStatus, place_id } = this.state.data
     const modalClassName = modal ? 'display-block' : 'display-none'
     return (
       <>
         <MapGl
-          mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
+          mapboxApiAccessToken={tok}
           mapStyle='mapbox://styles/mapbox/light-v10'
           {...this.props.viewport}
           onViewportChange={this.props.moveMap}
