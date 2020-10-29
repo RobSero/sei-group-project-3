@@ -113,6 +113,6 @@ Mongoose was used to interface with our mongo Database as myself and the team fe
 - I feel like the biggest challenge was assisting the front-end when needed because the React App had a lot of third party packages which I had never come across before.
 - Naturally, everybody has their own style of working and it takes time to get familiar with how others write code, how they prefer to schedule their day and allocate their time. As we only had a week to work on this, it was only near the end of the project that we all started getting used to each other's styles.
 
-## **8.0 Noteable Bugs **
+## **8.0 Noteable Bugs**
 - There is a fair amount of polish required on the front end, particularly when no image has been uploaded, this causes the default alt text to mis-align a lot of the styling.
 - Currently the Mapbox API has crashed and I will be looking at this bug in the near future. 
